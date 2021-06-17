@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  background-color: #fafafa;
+  margin: 32px 30%;
+  width: 40%;
+}
+form {
+  width: 100%;
+  border: 1px dashed orange;
+}
+form input {
+  background-color: #ffffff;
+  border: none;
+  padding: 6px;
+  padding-left: 12px;
+  width: 90%;
+  font-size: 1.8rem;
+  height: 64px;
+}
+form input:focus {
+  outline: none;
+}
+
+form button {
+  width: 10%;
+  height: 64px;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: orange;
+}
+.todo {
+  padding: 12px;
+  margin: 12px;
+  border-bottom: 1px solid #dedede;
+  &:last-child {
+    border: 0;
+  }
+}
+.todos {
+  border: 1px solid #ccc;
+}
+.delete {
+  float: right;
+}
+.todo:hover .delete {
+  display: inline-block;
+}
+.delete {
+  cursor: pointer;
+  display: none;
+}
+.delete:hover {
+  color: orange;
+}
+.checkbox {
+  margin: 0px 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  &:checked {
+    background-color: rgb(241, 217, 173);
+    border: 1px solid orange;
+  }
+}
+.checked {
+  text-decoration: line-through;
+  color: rgb(143, 136, 136) !important;
+}
+.todoItem {
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgb(228, 147, 40);
+}

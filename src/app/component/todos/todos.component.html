@@ -1,0 +1,15 @@
+<div class="container">
+    <form (submit)="addTodo($event)">
+        <input spellcheck="false" autocomplete="off" [(ngModel)]="todo" placeholder="Add new task" type="text"
+            (keyup.enter)="todo=''" name="todo" />
+        <button type="submit" [disabled]="todo===''">+</button>
+    </form>
+    <div class="todos">
+        <div *ngFor="let todo of todos; let i=index" class="todo">
+            <input [id]="i" type="checkbox" class="checkbox" [(ngModel)]="todo.completed" (change) = 'changeStatus()' />
+            <label [for]="i" class="todoItem" [ngClass]="{'checked': todo.completed}">{{ todo.todo }}
+            </label>
+            <span (click)="deleteTodo(i)" class="delete">X</span>
+        </div>
+    </div>
+</div>
