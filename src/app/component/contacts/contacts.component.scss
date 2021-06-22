@@ -1,0 +1,145 @@
+.container {
+  background-color: #fafafa;
+  margin: 32px;
+}
+
+.btn {
+  background-color: orange;
+  color: #fafafa;
+  padding: 8px;
+  margin-right: 12px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+  &:disabled {
+    background-color: #ddd;
+  }
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: orange;
+  font-weight: 900;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border: 1px dashed #ddd;
+  span {
+    font-size: 1.8rem;
+  }
+  p {
+    margin-top: 6px;
+  }
+}
+
+.actions {
+  padding: 12px;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  background-color: #fafafa;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.form-grp-wrapper {
+  margin: 6px 0px;
+  padding: 8px;
+  width: 18vw;
+  min-height: 13vw;
+  background-color: #fafafa;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2);
+  border: 1px dashed rgb(241, 217, 170);
+}
+
+.update-contact-btn {
+  background-color: orange;
+}
+
+.save-contact-btn {
+  margin-top: 12px;
+  background-color: brown;
+}
+
+.form-group {
+  padding: 12px 0px;
+  input {
+    width: 100%;
+    border: 1px solid orange;
+    margin-top: 12px;
+    padding: 12px;
+    &:focus {
+      border: 1px solid green !important;
+    }
+  }
+}
+
+.form-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      color: orange;
+    }
+    span {
+      font-size: 1rem;
+      color: rgb(110, 107, 107);
+    }
+  }
+}
+
+.error-message {
+  margin: 4px 0px;
+  color: red;
+}
+table {
+  background-color: #fafafa;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 8px;
+  thead {
+    th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      background-color: orange;
+      color: white;
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        button {
+          background-color: transparent;
+          width: 100%;
+          cursor: pointer;
+          &:hover {
+            color: red;
+          }
+        }
+      }
+      &:hover {
+        background-color: rgb(245, 242, 237);
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<div class="container">
+
+    <div *ngIf="showNotification" class="notification-container">
+        <div class="loader" ></div>
+        <div class="notification">
+            <svg xmlns="http://www.w3.org/2000/svg" class="tick" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+            </svg>
+            <span>
+                Todo item added
+            </span>
+        </div>
+    </div>
+
+    <form (submit)="addTodo($event)">
+        <input spellcheck="false" autocomplete="off" [(ngModel)]="author" placeholder="@author" type="text"
+            (keyup.enter)="author=''" name="author" />
+        <input spellcheck="false" autocomplete="off" [(ngModel)]="todo" placeholder="@task" type="text"
+            (keyup.enter)="todo=''" name="todo" />
+        <button type="submit" [disabled]="todo==='' && author ===''">+</button>
+    </form>
+</div>

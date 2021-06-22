@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="actions">
+        <button class="btn" (click)="consoleLog()" *ngIf="isDevMode">Log</button>
+        <button class="btn" (click)="handleFormsVisibility()">{{formVisiblity ? "Hide" : "Show"}}</button>
+        <button class="btn" (click)="addNewContactForm()">New</button>
+        <button *ngIf="contactFormArray.controls.length" class="btn" (click)="saveContacts()">Save All</button>
+        <button *ngIf="contactFormArray.controls.length" class="btn" (click)="removeAllContactForms()">Remove
+            All</button>
+
+    </div>
+
+    <div class="grid" *ngIf="formVisiblity">
+        <div class="form-grp-wrapper" *ngFor="let group of contactFormArray.controls; let i = index;">
+            <div class="form-title">
+                <h4>#{{i+1}}</h4>
+                <button (click)="deleteContactForm(i)">
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </button>
+            </div>
+            <form [formGroup]="group" class="form-group">
+                <input type="text" formControlName="firstName" placeholder="First Name" />
+                <div class="error-message"
+                    *ngIf="group.get('firstName').errors && group.get('firstName').errors['required']">
+                    First Name cannot be blank</div>
+                <input type="text" formControlName="lastName" placeholder="Last Name" />
+                <div class="error-message"
+                    *ngIf="group.get('lastName').errors && group.get('lastName').errors['required']">
+                    Last Name cannot be blank</div>
+                <input type="text" formControlName="email" placeholder="Email" />
+                <div class="error-message" *ngIf="group.get('email').errors && group.get('email').errors['required']">
+                    Email cannot be blank</div>
+                <div class="error-message" *ngIf="group.get('email').errors && group.get('email').errors['email']">
+                    Invalid email</div>
+                <button class="btn save-contact-btn" [disabled]="!group.valid" (click)="saveContact(i)">Save</button>
+                <button class="btn update-contact-btn" [disabled]="!group.valid"
+                    (click)="updateContact(i)">Update</button>
+            </form>
+        </div>
+        <div class="form-grp-wrapper">
+            <button class="add-form" (click)="addNewContactForm()">
+                <span class="material-icons">
+                    add_circle_outline
+                </span>
+                <p>
+                    New Contact
+                </p>
+            </button>
+        </div>
+    </div>
+
+    <table *ngIf="contacts.length">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contacts; let i = index;">
+                <td>{{i+1}}</td>
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.lastName}}</td>
+                <td>{{contact.email}}</td>
+                <td>
+                    <button (click)="deleteContact(i)">
+                        <span class="material-icons">
+                            delete
+                        </span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

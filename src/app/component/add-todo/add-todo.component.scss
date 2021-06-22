@@ -1,0 +1,71 @@
+.container {
+  background-color: #fafafa;
+  margin: 32px 30%;
+  width: 40%;
+}
+form {
+  width: 100%;
+  border: 1px dashed orange;
+  margin-top: 12px;
+}
+form input {
+  background-color: #ffffff;
+  border: none;
+  padding: 6px;
+  padding-left: 12px;
+  width: 90%;
+  font-size: 1.8rem;
+  height: 64px;
+  &:nth-child(1) {
+    width: 100%;
+    border-bottom: 1px dashed #dbdbdb;
+  }
+}
+form input:focus {
+  outline: none;
+}
+
+form button {
+  width: 10%;
+  height: 64px;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: orange;
+}
+.notification-container {
+  background-color: rgb(243, 186, 81);
+  color: #fafafa;
+  font-weight: 600;
+}
+
+.notification {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+.notification span {
+  margin-left: 16px;
+  font-size: 1.1rem;
+}
+.loader {
+  display: block;
+  height: 4px;
+  max-width: 100%;
+  background-color: #ffffff;
+  animation: loader 2s ease-in-out;
+}
+
+@keyframes loader {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.tick {
+  width: 32px;
+  height: 32px;
+}
