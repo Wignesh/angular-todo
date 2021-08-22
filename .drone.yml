@@ -1,0 +1,14 @@
+kind: pipeline
+type: kubernetes
+name: greeting
+
+steps:
+  - name: en
+    image: alpine
+    commands:
+      - sleep 5
+      - echo hello world
+    # resources:
+    #   limit:
+    #     cpu: 1000
+    #     memory: 1000MiB
